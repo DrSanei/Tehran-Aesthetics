@@ -1,0 +1,61 @@
+/*
+ Theme Name:   Tehran Aesthetics Child
+ Template:     hello-elementor
+ Version:      2.0.0
+ Text Domain:  ta-child
+ Description:  Dark luxury RTL theme with fixed header (menu icon + centered logo) and global offcanvas menu.
+*/
+:root{
+  --ta-gold:#C8A94B;
+  --ta-blue:#3AA0FF;
+  --ta-black:#0B0B0C;
+  --ta-dark:#141416;
+  --ta-gray:#2A2B2E;
+  --ta-text:#E8E8EA;
+}
+html{scroll-behavior:smooth}
+body{ background:var(--ta-black); color:var(--ta-text); direction:rtl; text-align:right;
+  font-family:"Vazirmatn","IRANSans",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; }
+
+/* Fixed Header */
+.ta-header{
+  position:sticky; top:0; z-index:10000; background:var(--ta-black);
+  display:flex; align-items:center; justify-content:center; height:56px;
+  border-bottom:1px solid #1e1e1e; padding:0 12px;
+}
+.ta-header .menu-btn{ position:absolute; right:12px; display:flex; align-items:center; gap:6px;
+  color:var(--ta-text); background:transparent; border:none; font-size:14px; cursor:pointer; }
+.ta-header .menu-btn .bar{ width:20px; height:2px; background:var(--ta-text); display:block; margin:3px 0; border-radius:2px }
+.ta-header .logo{ color:var(--ta-gold); font-weight:800; letter-spacing:.3px; font-size:15px; display:flex; align-items:center; gap:8px }
+.ta-header .logo img{ height:26px; width:auto }
+
+/* Offcanvas Menu */
+.ta-menu-overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; z-index:11000;
+}
+.ta-menu-panel{
+  position:absolute; right:0; top:0; height:100%; width:min(86vw,380px);
+  background:#111214; border-left:1px solid #1f1f1f; padding:16px;
+  display:flex; flex-direction:column; gap:8px;
+}
+.ta-menu-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px }
+.ta-menu-title{ color:var(--ta-gold); font-weight:800 }
+.ta-menu-close{ background:transparent; border:none; color:#bbb; font-size:20px; cursor:pointer }
+.ta-menu-list a{
+  display:flex; align-items:center; justify-content:space-between;
+  text-decoration:none; color:#eaeaea; padding:10px 12px; border-radius:10px; border:1px solid #222;
+  background:#15161a;
+}
+.ta-menu-list a:hover{ background:#1a1c21; border-color:#2a2d34 }
+.ta-menu-list small{ color:#9aa }
+.ta-cta{ margin-top:auto; display:grid; gap:8px }
+.ta-cta a.btn{ display:block; text-align:center; text-decoration:none; padding:12px; border-radius:12px; font-weight:700 }
+.btn-primary{ background:var(--ta-gold); color:#0B0B0C }
+.btn-ghost{ border:1px solid var(--ta-blue); color:var(--ta-blue) }
+
+/* Footer copy */
+.footer-copy{ color:#a9a9a9; font-size:12px; text-align:center; padding:20px 12px }
+
+/* Spacing for fixed bottom nav */
+body{ padding-bottom:76px }
+@media(min-width:768px){ body{ padding-bottom:0 } }

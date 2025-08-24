@@ -1,0 +1,1 @@
+// init handled in jalali.js

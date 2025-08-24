@@ -1,0 +1,20 @@
+.ta-home section{ padding:18px 12px; border-bottom:1px solid #1e1e1e }
+.hero{ display:grid; gap:10px }
+.hero .hero-text h1{ color:#C8A94B; margin:0 }
+.hero .hero-text p{ color:#cfcfd2; margin:4px 0 0 0 }
+.finder form{ display:grid; grid-template-columns:1fr 1fr; gap:8px; background:#141416; padding:10px; border-radius:12px; border:1px solid #242428 }
+.finder select{ background:#0f1013; color:#E8E8EA; border:1px solid #2c2d33; padding:8px; border-radius:10px }
+.finder button{ grid-column:1/-1; background:#C8A94B; color:#0B0B0C; border:none; padding:10px; border-radius:10px; font-weight:700 }
+
+.services h2, .offers h2, .branches h2{ color:#C8A94B; margin:0 0 8px 0 }
+.grid{ display:grid; gap:10px; grid-template-columns:repeat(2,1fr) }
+.card{ background:#141416; border:1px solid #242428; border-radius:14px; overflow:hidden; text-decoration:none; color:#E8E8EA }
+.card img{ width:100%; height:110px; object-fit:cover }
+.card .t{ padding:8px 10px }
+
+.ta-page{ background:#fff; color:#111; border-radius:12px; padding:16px }
+.ta-page .grid{ display:grid; gap:10px; grid-template-columns:repeat(2,1fr) }
+.ta-page .card{ background:#f4f4f6; border:1px solid #e3e3e8; color:#111 }
+.ta-page .card img{ height:110px }
+.branch{ display:grid; grid-template-columns:110px 1fr; gap:12px; background:#f6f6f8; padding:12px; border-radius:12px; border:1px solid #e8e8ee; margin-bottom:12px }
+.btn{ display:inline-block; background:#C8A94B; color:#0B0B0C; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700 }

@@ -1,0 +1,19 @@
+.ta-wizard{ background:#fff; color:#111; border-radius:12px; padding:16px }
+.ta-steps{ display:flex; gap:8px; justify-content:center; margin-bottom:12px }
+.ta-steps .dot{ width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#e6e6e6; color:#555; font-weight:700 }
+.ta-steps .dot.active{ background:#C8A94B; color:#0B0B0C }
+.ta-form{ display:grid; gap:10px }
+.ta-form input, .ta-form select{ padding:10px 12px; border:1px solid #ddd; border-radius:10px; font-size:14px }
+.ta-form input:focus, .ta-form select:focus{ outline:none; border-color:#C8A94B; box-shadow:0 0 0 3px rgba(200,169,75,.18) }
+.ta-form .btn{ display:inline-block; text-align:center; background:#3AA0FF; color:#fff; padding:12px; border-radius:12px; text-decoration:none; border:none; cursor:pointer }
+.ta-form .btn.pay{ background:#C8A94B; color:#0B0B0C; font-weight:700 }
+.summary{ margin-top:6px; font-size:14px }
+.confirm{ text-align:center; padding:32px 12px }
+.confirm .ok{ font-size:48px; color:#C8A94B }
+.confirm .sub{ color:#666 }
+#ta-calendar{ margin-top:8px; border:1px solid #ddd; border-radius:10px; padding:10px }
+.ta-cal-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:8px }
+.ta-cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:6px }
+.ta-cal-cell{ text-align:center; padding:8px 0; border-radius:8px; background:#f6f6f6; cursor:pointer }
+.ta-cal-cell.muted{ opacity:.4 }
+.ta-cal-cell.selected{ background:#C8A94B; color:#0B0B0C; font-weight:700 }
