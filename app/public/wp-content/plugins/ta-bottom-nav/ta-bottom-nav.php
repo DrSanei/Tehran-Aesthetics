@@ -48,6 +48,7 @@ class TA_Bottom_Nav {
   public function render(){
     if (is_admin()) return;
     $links = [
+
       'home' => esc_url( get_option('ta_nav_home', home_url('/')) ),
       'services' => esc_url( get_option('ta_nav_services', home_url('/services')) ),
       'consult' => esc_url( get_option('ta_nav_consult', home_url('/consult')) ),

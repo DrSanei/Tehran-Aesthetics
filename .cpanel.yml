@@ -9,13 +9,11 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH/wp-content/plugins/
 
     # دیپلوی تم
-    - /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" \
-      ./wp-content/themes/tehran-aesthetics-child/ \
-      $DEPLOYPATH/wp-content/themes/tehran-aesthetics-child/
+    - /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" ./wp-content/themes/tehran-aesthetics-child/ $DEPLOYPATH/wp-content/themes/tehran-aesthetics-child/
+
 
     # (اختیاری) دیپلوی پلاگین‌های اختصاصی همین ریپو
-    - /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" \
-      ./wp-content/plugins/ \
-      $DEPLOYPATH/wp-content/plugins/
+    - /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" ./wp-content/plugins/ $DEPLOYPATH/wp-content/plugins/
+
 
     # هرگز هسته وردپرس، wp-config.php یا uploads را از ریپو overwrite نکن
