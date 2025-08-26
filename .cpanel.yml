@@ -1,19 +1,37 @@
 ---
 deployment:
   tasks:
-    # مقصد وردپرس تهران-استتیکس (دایرکتوری نصب WP)
-    - export DEPLOYPATH=/home/painclin/public_html/ta/
+    - export DEP=/home/painclin/public_html/ta/wp-content
+    - /bin/mkdir -p $DEP/themes
+    - /bin/mkdir -p $DEP/plugins
 
-    # ساخت پوشه‌ها (اگر نبود)
-    - /bin/mkdir -p $DEPLOYPATH/wp-content/themes/tehran-aesthetics-child/
-    - /bin/mkdir -p $DEPLOYPATH/wp-content/plugins/
+    # === THEME: tehran-aesthetics-child ===
+    - |
+      set -e
+      SRC=""
+      for CAND in \
+        "./wp-content/themes/tehran-aesthetics-child" \
+        "./themes/tehran-aesthetics-child" \
+        "./theme/tehran-aesthetics-child" \
+        "./tehran-aesthetics-child"
+      do
+        if [ -d "$CAND" ]; then SRC="$CAND"; break; fi
+      done
+      if [ -n "$SRC" ]; then
+        echo "Deploying theme from: $SRC"
+        /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" "$SRC/" "$DEP/themes/tehran-aesthetics-child/"
+      else
+        echo "WARNING: child theme source not found in repo; skipped."
+      fi
 
-    # دیپلوی تم
-    - /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" ./wp-content/themes/tehran-aesthetics-child/ $DEPLOYPATH/wp-content/themes/tehran-aesthetics-child/
-
-
-    # (اختیاری) دیپلوی پلاگین‌های اختصاصی همین ریپو
-    - /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" ./wp-content/plugins/ $DEPLOYPATH/wp-content/plugins/
-
-
-    # هرگز هسته وردپرس، wp-config.php یا uploads را از ریپو overwrite نکن
+    # === PLUGINS (optional) ===
+    - |
+      if [ -d "./wp-content/plugins" ]; then
+        echo "Deploying custom plugins from ./wp-content/plugins"
+        /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" "./wp-content/plugins/" "$DEP/plugins/"
+      elif [ -d "./plugins" ]; then
+        echo "Deploying custom plugins from ./plugins"
+        /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" "./plugins/" "$DEP/plugins/"
+      else
+        echo "No custom plugins folder found; skipped."
+      fi
