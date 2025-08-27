@@ -66,16 +66,16 @@ add_action('wp_footer', function(){
   echo '<div class="footer-copy">همه حقوق و منافع این سایت متعلق به شرکت لوتوس طب فراگیر می‌باشد.</div>';
 });
 
-add_action('template_redirect', function () {
-  $path = rawurldecode(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH));
-  // Handle language prefixes like /fa/... or /en/...
-  $base = trim(basename($path), '/');
-
-  // Match both English and Persian slugs
-  if (in_array($base, ['consult', 'مشاوره-آنلاین'], true)) {
-    wp_safe_redirect('https://healio.ir', 301);
+add_action('template_redirect', function() {
+  // English slug
+  if (is_page('consult')) {
+    wp_redirect('https://healio.ir', 301);
     exit;
   }
-});
 
+  // Persian slug (مشاوره-آنلاین)
+  if (is_page('مشاوره-آنلاین')) {
+    wp_redirect('https://healio.ir', 301);
+    exit;
+  }
 });
