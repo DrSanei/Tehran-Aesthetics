@@ -57,14 +57,19 @@ class TA_AutoBuilder {
   public function home_shortcode(){
     ob_start(); ?>
     <div class="ta-home" dir="rtl">
-      <section class="doctor-intro">
-        <div class="ph">[تصویر پزشک]</div>
-        <h2>دکتر محمد صانعی</h2>
-        <p>تحت نظارت MD, PhD زیبایی، پوست، مو</p>
-        <a href="https://healio.ir" class="btn btn-primary">
-        مشاوره آنلاین
+     <section class="doctor-intro">
+        <div class="ph">
+          <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/Mohamad-Sanei-scaled.jpg"
+              alt="دکتر محمد صانعی"
+              style="max-width:100%;height:auto;border-radius:12px;" />
+        </div>
+        <h2>زیر نظر دکتر محمد صانعی</h2>
+        <p>پزشک و متخصص طب مکمل، زیبایی و پیشگیری</p>
+        <a href="https://healio.ir" class="btn btn-primary" target="_blank" rel="noopener">
+          شروع مشاوره
         </a>
       </section>
+
       <section class="offers">
         <div class="banner">[بنر پیشنهادها]</div>
       </section>
