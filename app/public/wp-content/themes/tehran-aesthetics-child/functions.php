@@ -18,26 +18,34 @@ add_action('wp_enqueue_scripts', function(){
 
 // Header bar output (centered logo + menu icon)
 add_action('wp_body_open', function(){
-  echo '<div class="ta-header">';
-  echo '<button class="menu-btn" type="button" aria-label="منو" data-ta-menu-open>';
-  echo '<span class="bar"></span><span class="bar"></span><span class="bar"></span>';
-  echo '</button>';
-  if (function_exists('the_custom_logo') && has_custom_logo()) {
-    echo '<div class="logo">'. wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full', false, ['style'=>'height:26px;width:auto'] ) .'</div>';
-  } else {
-    echo '<div class="logo"><span>Tehran‑Aesthetics</span></div>';
-  }
-  echo '</div>';
-  // Global Offcanvas (shared by header & bottom nav)
+  $home    = home_url('/');
   $branches = ta_link_by_title('شعب', '/branches');
   $services = ta_link_by_title('خدمات', '/services');
   $tips     = ta_link_by_title('نکات زیبایی', '/beauty-tips');
   $offers   = ta_link_by_title('تخفیف‌ها', '/offers');
-  $consult  = 'https://healio.ir';
-
-
+  $consult  = 'https://healio.ir'; // force external
   $reserve  = ta_link_by_title('رزرو نوبت', '/reserve');
 
+  echo '<div class="ta-header">';
+  // Menu button (icon + label)
+  echo '<button class="menu-btn" type="button" aria-label="منو" data-ta-menu-open>';
+  echo   '<span class="material-icons">menu</span><span>منو</span>';
+  echo '</button>';
+
+  // Logo (larger + linked to خانه)
+  echo '<div class="logo">';
+  if (function_exists('the_custom_logo') && has_custom_logo()) {
+    $logo = wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, [
+      'style' => 'height:56px;width:auto' // initial inline; CSS will override with !important
+    ]);
+    echo '<a href="'. esc_url($home) .'" aria-label="خانه">'. $logo .'</a>';
+  } else {
+    echo '<a href="'. esc_url($home) .'" class="text-logo">Tehran-Aesthetics</a>';
+  }
+  echo '</div>';
+  echo '</div>';
+
+  // Global Offcanvas (shared by header & bottom nav)
   echo '<div class="ta-menu-overlay" id="taMenuOverlay" hidden>
           <div class="ta-menu-panel" role="dialog" aria-label="منوی سایت">
             <div class="ta-menu-head">
@@ -45,17 +53,18 @@ add_action('wp_body_open', function(){
               <button class="ta-menu-close" aria-label="بستن" data-ta-menu-close>✕</button>
             </div>
             <nav class="ta-menu-list" dir="rtl">
+              <a href="'. esc_url( $home ) .'"><span>خانه</span><small>صفحه اصلی</small></a>
               <a href="'. esc_url( $branches ) .'"><span>شعب</span><small>آدرس و نقشه</small></a>
-              <a href="'. esc_url( $services ) .'"><span>خدمات</span><small>خدمات زیبایی</small></a>
-              <a href="'. esc_url( $tips ) .'"><span>نکات زیبایی</span><small>مقالات و مراقبت پوست</small></a>
+              <a href="'. esc_url( $services ) .'"><span>خدمات</span><small>زیبایی و درمان</small></a>
+              <a href="'. esc_url( $tips ) .'"><span>نکات زیبایی</span><small>مقالات و مراقبت</small></a>
               <a href="'. esc_url( $offers ) .'"><span>تخفیف‌ها</span><small>پکیج‌ها و آفرها</small></a>
-              <a href="'. esc_url( $consult ) .'"><span>مشاوره آنلاین</span><small>غیرهمزمان</small></a>
+              <a href="'. esc_url( $consult ) .'" target="_blank" rel="noopener"><span>مشاوره آنلاین</span><small>غیرهمزمان</small></a>
               <a href="'. esc_url( $reserve ) .'"><span>رزرو نوبت</span><small>تقویم فارسی</small></a>
               <a href="https://t.me/TehranAesthetics" target="_blank" rel="noopener"><span>تلگرام</span><small>@TehranAesthetics</small></a>
             </nav>
             <div class="ta-cta">
-              <a class="btn btn-primary" href="'. esc_url( $reserve ) .'">رزرو سریع نوبت</a>
-              <a class="btn btn-ghost" href="'. esc_url( $consult ) .'">مشاوره آنلاین</a>
+              <a class="btn btn-primary" href="'. esc_url( $home ) .'">خانه</a>
+              <a class="btn btn-ghost" href="'. esc_url( $consult ) .'" target="_blank" rel="noopener">مشاوره آنلاین</a>
             </div>
           </div>
         </div>';
