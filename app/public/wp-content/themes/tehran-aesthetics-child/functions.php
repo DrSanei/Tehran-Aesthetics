@@ -1,9 +1,14 @@
 <?php
 // Helper to link by Persian title safely
-function ta_link_by_title($title, $fallback){
+function ta_link_by_title($title, $fallback = ''){
   $p = get_page_by_title($title);
-  return $p ? get_permalink($p) : home_url($fallback);
+  if ($p) return get_permalink($p);
+  // If fallback is an absolute URL, return it directly
+  if ($fallback && preg_match('#^https?://#i', $fallback)) return $fallback;
+  // Otherwise treat as site-relative path
+  return home_url($fallback ?: '/');
 }
+
 
 // Load styles + header/menu script
 add_action('wp_enqueue_scripts', function(){
@@ -28,7 +33,9 @@ add_action('wp_body_open', function(){
   $services = ta_link_by_title('خدمات', '/services');
   $tips     = ta_link_by_title('نکات زیبایی', '/beauty-tips');
   $offers   = ta_link_by_title('تخفیف‌ها', '/offers');
-  $consult  = ta_link_by_title('مشاوره آنلاین', 'https://healio.ir/');
+  $consult  = 'https://healio.ir';
+
+
   $reserve  = ta_link_by_title('رزرو نوبت', '/reserve');
 
   echo '<div class="ta-menu-overlay" id="taMenuOverlay" hidden>
@@ -59,16 +66,16 @@ add_action('wp_footer', function(){
   echo '<div class="footer-copy">همه حقوق و منافع این سایت متعلق به شرکت لوتوس طب فراگیر می‌باشد.</div>';
 });
 
-add_action('template_redirect', function() {
-  // English slug
-  if (is_page('consult')) {
-    wp_redirect('https://healio.ir', 301);
-    exit;
-  }
+add_action('template_redirect', function () {
+  $path = rawurldecode(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH));
+  // Handle language prefixes like /fa/... or /en/...
+  $base = trim(basename($path), '/');
 
-  // Persian slug (مشاوره-آنلاین)
-  if (is_page('مشاوره-آنلاین')) {
-    wp_redirect('https://healio.ir', 301);
+  // Match both English and Persian slugs
+  if (in_array($base, ['consult', 'مشاوره-آنلاین'], true)) {
+    wp_safe_redirect('https://healio.ir', 301);
     exit;
   }
+});
+
 });
