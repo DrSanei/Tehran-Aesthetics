@@ -28,7 +28,7 @@ add_action('wp_body_open', function(){
   $services = ta_link_by_title('خدمات', '/services');
   $tips     = ta_link_by_title('نکات زیبایی', '/beauty-tips');
   $offers   = ta_link_by_title('تخفیف‌ها', '/offers');
-  $consult  = ta_link_by_title('مشاوره آنلاین', '/consult');
+  $consult  = ta_link_by_title('مشاوره آنلاین', 'https://healio.ir/');
   $reserve  = ta_link_by_title('رزرو نوبت', '/reserve');
 
   echo '<div class="ta-menu-overlay" id="taMenuOverlay" hidden>

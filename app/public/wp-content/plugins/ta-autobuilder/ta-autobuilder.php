@@ -25,7 +25,10 @@ class TA_AutoBuilder {
     $services_id = $this->ensure_page('خدمات', '<h2>لیست خدمات</h2>');
     $branches_id = $this->ensure_page('شعب', '<h2>لیست شعب</h2>');
     $reserve_id  = $this->ensure_page('رزرو نوبت', '[ta_booking]');
-    $consult_id  = $this->ensure_page('مشاوره آنلاین', '<h2>مشاوره آنلاین</h2><p><a href="/step1">شروع مشاوره</a></p>');
+    $consult_id  = $this->ensure_page(
+  'مشاوره آنلاین',
+  '<h2>مشاوره آنلاین</h2><p><a href="https://healio.ir/step1">شروع مشاوره</a></p>'
+);
 
     update_option('show_on_front', 'page');
     update_option('page_on_front', $home_id);
@@ -58,9 +61,9 @@ class TA_AutoBuilder {
         <div class="ph">[تصویر پزشک]</div>
         <h2>دکتر محمد صانعی</h2>
         <p>تحت نظارت MD, PhD زیبایی، پوست، مو</p>
-<a href="https://healio.ir" class="btn btn-primary">
-  مشاوره آنلاین
-</a>
+        <a href="https://healio.ir" class="btn btn-primary">
+        مشاوره آنلاین
+        </a>
       </section>
       <section class="offers">
         <div class="banner">[بنر پیشنهادها]</div>
