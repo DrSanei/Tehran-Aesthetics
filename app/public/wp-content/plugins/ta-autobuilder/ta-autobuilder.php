@@ -75,13 +75,41 @@ class TA_AutoBuilder {
       </section>
       <section class="services">
         <h3>خدمات</h3>
-        <div class="cards">
-          <div class="card">کاشت مو</div>
-          <div class="card">کاشت ابرو</div>
-          <div class="card">بلفاروپلاستی</div>
-          <div class="card">تزریق ژل</div>
-          <div class="card">بوتاکس</div>
-        </div>
+        <<div class="cards">
+  <a class="card" href="/services/hair-transplant">
+    <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/کاشت-مو.jpg" alt="کاشت مو"/>
+    <span>کاشت مو</span>
+  </a>
+  <a class="card" href="/services/eyebrow-transplant">
+    <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/کاشت-ابرو.jpg" alt="کاشت ابرو"/>
+    <span>کاشت ابرو</span>
+  </a>
+  <a class="card" href="/services/blepharoplasty">
+    <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/جراحی-افتادگی-پلک.jpg" alt="جراحی پلک"/>
+    <span>جراحی افتادگی پلک</span>
+  </a>
+  <a class="card" href="/services/filler">
+    <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/تزریق-فیلر.jpg" alt="تزریق فیلر"/>
+    <span>تزریق فیلر</span>
+  </a>
+  <a class="card" href="/services/laser">
+    <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/لیزر-موی-زاِید.jpg" alt="لیزر موهای زائد"/>
+    <span>لیزر موهای زائد</span>
+  </a>
+  <a class="card" href="/services/prp">
+    <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/پی-آر-پی-صورت-و-مو.jpg" alt="پی آر پی"/>
+    <span>پی آر پی صورت و مو</span>
+  </a>
+  <a class="card" href="/services/contouring">
+    <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/کانتورینگ-صورت.jpg" alt="کانتورینگ صورت"/>
+    <span>کانتورینگ صورت</span>
+  </a>
+  <a class="card" href="/services/rejuvenation">
+    <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/جوان-سازی-پوست.jpg" alt="جوان سازی پوست"/>
+    <span>جوان سازی پوست</span>
+  </a>
+</div>
+
       </section>
       <section class="branches">
         <h3>شعب</h3>
