@@ -1,37 +1,35 @@
 ---
 deployment:
   tasks:
-    - export DEP=/home/painclin/public_html/ta/wp-content
-    - /bin/mkdir -p $DEP/themes
-    - /bin/mkdir -p $DEP/plugins
+    - /bin/bash -lc '
+        set -e;
+        REPO="/home/painclin/repositories/Tehran-Aesthetics";
+        SRC_THEME="$REPO/app/public/wp-content/themes/tehran-aesthetics-child";
+        SRC_PLUGINS="$REPO/app/public/wp-content/plugins";
+        DOCROOT="/home/painclin/public_html/ta";
+        DEST_THEME="$DOCROOT/wp-content/themes/tehran-aesthetics-child";
+        DEST_PLUGINS="$DOCROOT/wp-content/plugins";
 
-    # === THEME: tehran-aesthetics-child ===
-    - |
-      set -e
-      SRC=""
-      for CAND in \
-        "./wp-content/themes/tehran-aesthetics-child" \
-        "./themes/tehran-aesthetics-child" \
-        "./theme/tehran-aesthetics-child" \
-        "./tehran-aesthetics-child"
-      do
-        if [ -d "$CAND" ]; then SRC="$CAND"; break; fi
-      done
-      if [ -n "$SRC" ]; then
-        echo "Deploying theme from: $SRC"
-        /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" "$SRC/" "$DEP/themes/tehran-aesthetics-child/"
-      else
-        echo "WARNING: child theme source not found in repo; skipped."
-      fi
+        echo "== Ensure target folders ==";
+        /bin/mkdir -p "$DEST_THEME" "$DEST_PLUGINS";
 
-    # === PLUGINS (optional) ===
-    - |
-      if [ -d "./wp-content/plugins" ]; then
-        echo "Deploying custom plugins from ./wp-content/plugins"
-        /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" "./wp-content/plugins/" "$DEP/plugins/"
-      elif [ -d "./plugins" ]; then
-        echo "Deploying custom plugins from ./plugins"
-        /bin/rsync -av --delete --exclude=".git*" --exclude=".cpanel.yml" "./plugins/" "$DEP/plugins/"
-      else
-        echo "No custom plugins folder found; skipped."
-      fi
+        echo "== Copy THEME (clean replace) ==";
+        /bin/rm -rf "$DEST_THEME";
+        /bin/mkdir -p "$DEST_THEME";
+        /bin/cp -a "$SRC_THEME/." "$DEST_THEME/";
+
+        echo "== Copy PLUGINS (merge, per plugin) ==";
+        if [ -d "$SRC_PLUGINS" ]; then
+          for P in "$SRC_PLUGINS"/*; do
+            [ -e "$P" ] || continue;
+            BN="$(/usr/bin/basename "$P")";
+            /bin/rm -rf "$DEST_PLUGINS/$BN";
+            /bin/cp -a "$P" "$DEST_PLUGINS/";
+          done
+        else
+          echo "No plugins directory in repo (skip)";
+        fi;
+
+        /bin/date > "$DEST_THEME/DEPLOY_OK.txt";
+        echo "== DONE (Tehran-Aesthetics) ==";
+      '
