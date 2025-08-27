@@ -71,8 +71,14 @@ class TA_AutoBuilder {
       </section>
 
       <section class="offers">
-        <div class="banner">[بنر پیشنهادها]</div>
-      </section>
+  <div class="banner">
+    <img 
+      src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/Off-Banner.png' ); ?>" 
+      alt="بنر پیشنهادها" 
+      style="width:100%;height:auto;border-radius:16px;" />
+  </div>
+</section>
+
       <section class="services">
         <h3>خدمات</h3>
         <<div class="cards">
