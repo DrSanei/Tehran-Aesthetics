@@ -64,7 +64,7 @@ class TA_AutoBuilder {
               style="max-width:100%;height:auto;border-radius:12px;" />
         </div>
         <h3>زیر نظر دکتر محمد صانعی</h3>
-        <p>پزشک و متخصص طب مکمل، زیبایی و پیشگیری</p>
+        <p>پزشک و متخصص طب مکمل، زیبایی</p>
         <a href="https://healio.ir" class="btn btn-primary" target="_blank" rel="noopener">
           شروع مشاوره
         </a>
