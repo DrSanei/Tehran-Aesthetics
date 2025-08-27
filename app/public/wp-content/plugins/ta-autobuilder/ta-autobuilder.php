@@ -59,7 +59,7 @@ class TA_AutoBuilder {
     <div class="ta-home" dir="rtl">
      <section class="doctor-intro">
         <div class="ph">
-          <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/Mohamad-Sanei-scaled.jpg"
+          <img src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/Mohamad-Sanei-1-scaled.jpg"
               alt="دکتر محمد صانعی"
               style="max-width:100%;height:auto;border-radius:12px;" />
         </div>
