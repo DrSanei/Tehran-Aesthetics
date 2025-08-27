@@ -37,7 +37,7 @@ class TA_Bottom_Nav {
         <table class="form-table">
           <tr><th>خانه</th><td><input type="text" name="ta_nav_home" value="<?php echo esc_attr(get_option('ta_nav_home', home_url('/'))); ?>" class="regular-text"></td></tr>
           <tr><th>خدمات</th><td><input type="text" name="ta_nav_services" value="<?php echo esc_attr(get_option('ta_nav_services', home_url('/services'))); ?>" class="regular-text"></td></tr>
-          <tr><th>مشاوره آنلاین</th><td><input type="text" name="ta_nav_consult" value="<?php echo esc_attr(get_option('ta_nav_consult', home_url('/consult'))); ?>" class="regular-text"></td></tr>
+          <tr><th>مشاوره آنلاین</th><td><input type="text" name="ta_nav_consult" value="<?php echo esc_attr(get_option('ta_nav_consult', home_url('https://healio.ir/'))); ?>" class="regular-text"></td></tr>
           <tr><th>رزرو نوبت</th><td><input type="text" name="ta_nav_reserve" value="<?php echo esc_attr(get_option('ta_nav_reserve', home_url('/reserve'))); ?>" class="regular-text"></td></tr>
           <tr><th>شعب</th><td><input type="text" name="ta_nav_branches" value="<?php echo esc_attr(get_option('ta_nav_branches', home_url('/branches'))); ?>" class="regular-text"></td></tr>
           <tr><th>تلگرام</th><td><input type="text" name="ta_nav_telegram" value="<?php echo esc_attr(get_option('ta_nav_telegram', 'https://t.me/TehranAesthetics')); ?>" class="regular-text"></td></tr>
@@ -51,7 +51,7 @@ class TA_Bottom_Nav {
 
       'home' => esc_url( get_option('ta_nav_home', home_url('/')) ),
       'services' => esc_url( get_option('ta_nav_services', home_url('/services')) ),
-      'consult' => esc_url( get_option('ta_nav_consult', home_url('/consult')) ),
+      'consult' => esc_url( get_option('ta_nav_consult', home_url('https://healio.ir/')) ),
       'reserve' => esc_url( get_option('ta_nav_reserve', home_url('/reserve')) ),
       'branches' => esc_url( get_option('ta_nav_branches', home_url('/branches')) ),
     ];

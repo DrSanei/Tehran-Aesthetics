@@ -110,7 +110,7 @@ class TA_AutoBuilder_EX {
     return '<div class="ta-page" dir="rtl"><h2>تخفیف‌ها و پکیج‌ها</h2><div class="grid">'. $this->cards(['پکیج جوانسازی','پکیج لیزر','پکیج بوتاکس','پکیج مراقبت مو']).'</div></div>';
   }
   private function consult(){
-    return '<div class="ta-page" dir="rtl"><h2>مشاوره آنلاین</h2><p>برای مشاوره غیرهمزمان روی دکمه زیر بزنید.</p><p><a class="btn" href="'. esc_url( home_url('/consult') ) .'">شروع مشاوره</a></p><p>یا از طریق تلگرام: <a href="https://t.me/TehranAesthetics" target="_blank">@TehranAesthetics</a></p></div>';
+    return '<div class="ta-page" dir="rtl"><h2>مشاوره آنلاین</h2><p>برای مشاوره غیرهمزمان روی دکمه زیر بزنید.</p><p><a class="btn" href="'. esc_url( home_url('https://healio.ir/') ) .'">شروع مشاوره</a></p><p>یا از طریق تلگرام: <a href="https://t.me/TehranAesthetics" target="_blank">@TehranAesthetics</a></p></div>';
   }
   private function cards($titles){
     $out=''; foreach($titles as $t){ $out .= '<a class="card" href="#"><img src="'. plugins_url('assets/svc.svg', __FILE__) .'" alt=""><div class="t">'. esc_html($t) .'</div></a>'; } return $out;
