@@ -58,7 +58,9 @@ class TA_AutoBuilder {
         <div class="ph">[تصویر پزشک]</div>
         <h2>دکتر محمد صانعی</h2>
         <p>تحت نظارت MD, PhD زیبایی، پوست، مو</p>
-        <a href="/step1" class="btn">مشاوره آنلاین</a>
+<a href="https://healio.ir" class="btn btn-primary">
+  مشاوره آنلاین
+</a>
       </section>
       <section class="offers">
         <div class="banner">[بنر پیشنهادها]</div>
