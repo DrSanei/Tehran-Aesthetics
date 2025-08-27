@@ -55,7 +55,7 @@ add_action('wp_body_open', function(){
             <nav class="ta-menu-list" dir="rtl">
               <a href="'. esc_url( $home ) .'"><span>خانه</span><small>صفحه اصلی</small></a>
               <a href="'. esc_url( $branches ) .'"><span>شعب</span><small>آدرس و نقشه</small></a>
-              <a href="'. esc_url( $services ) .'"><span>خدمات</span><small>زیبایی و درمان</small></a>
+<a href="'. esc_url( $offers ) .'"><span>جشنواره %</span><small>تخفیف خدمات</small></a>
               <a href="'. esc_url( $tips ) .'"><span>نکات زیبایی</span><small>مقالات و مراقبت</small></a>
               <a href="'. esc_url( $offers ) .'"><span>تخفیف‌ها</span><small>پکیج‌ها و آفرها</small></a>
               <a href="'. esc_url( $consult ) .'" target="_blank" rel="noopener"><span>مشاوره آنلاین</span><small>غیرهمزمان</small></a>

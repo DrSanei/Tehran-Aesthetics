@@ -72,10 +72,11 @@ class TA_AutoBuilder {
 
       <section class="offers">
   <div class="banner">
-    <img 
-      src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/Off-Banner.png' ); ?>" 
-      alt="بنر پیشنهادها" 
-      style="width:100%;height:auto;border-radius:16px;" />
+    <img
+      src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/Off-Banner.png"
+      alt="بنر پیشنهادها"
+      style="width:100%;height:auto;border-radius:16px;display:block;"
+    />
   </div>
 </section>
 

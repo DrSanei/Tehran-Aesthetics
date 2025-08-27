@@ -7,9 +7,34 @@
  * This function name uses British English to maintain backward compatibility, as developers
  * may use the function in their own admin CSS files. See #56811.
  */
+/* --- Dark site background --- */
 body {
-  background: #f1f1f1;
+  background: #0f1115;         /* deep charcoal */
+  color: #e8eaed;              /* light gray text */
 }
+
+/* Keep cards/sections readable on dark */
+.ta-home section,
+.cards .card {
+  background: #151922;
+  color: #e8eaed;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+}
+
+/* Existing header already dark; ensure nav looks right */
+.ta-menu-panel { background: #12151b; color: #e8eaed; }
+.ta-menu-list a { background: #171b22; color: #e8eaed; border: 1px solid rgba(255,255,255,.06); }
+.ta-menu-list a:hover { background: #1c222b; }
+
+/* Offers banner spacing on dark */
+.offers { margin: 24px 0; }
+.offers .banner img { display:block; border-radius:16px; }
+
+/* Buttons on dark */
+.btn.btn-primary { background:#b64bef; color:#fff; }
+.btn.btn-ghost { background:transparent; color:#e8eaed; border:1px solid rgba(255,255,255,.14); }
+
 
 /* Links */
 a {
