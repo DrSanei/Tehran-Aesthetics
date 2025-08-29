@@ -28,18 +28,19 @@ add_action('wp_body_open', function(){
 
   echo '<div class="ta-header">';
   // Menu button (icon + label)
- echo '<button class="menu-btn" type="button" aria-label="منو" data-ta-menu-open>';
-echo   '<span class="material-icons">menu</span>';
-echo   '<span style="margin-right:6px;">منو</span>';
+echo '<button class="menu-btn" type="button" aria-label="منو" data-ta-menu-open>';
+echo   '<span>منو</span>';
 echo '</button>';
+
 
 
   // Logo (larger + linked to خانه)
   echo '<div class="logo">';
   if (function_exists('the_custom_logo') && has_custom_logo()) {
-    $logo = wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, [
-      'style' => 'height:56px;width:auto' // initial inline; CSS will override with !important
-    ]);
+   $logo = wp_get_attachment_image( get_theme_mod('custom_logo'), 'full', false, [
+  'style' => 'height:80px;width:auto'
+]);
+
     echo '<a href="'. esc_url($home) .'" aria-label="خانه">'. $logo .'</a>';
   } else {
     echo '<a href="'. esc_url($home) .'" class="text-logo">Tehran-Aesthetics</a>';
