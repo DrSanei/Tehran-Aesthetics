@@ -11,7 +11,7 @@
   --ta-black:#0B0B0C;
   --ta-dark:#141416;
   --ta-gray:#2A2B2E;
-  --ta-text:#4343eb;
+  --ta-text:#b0b0e9;
 }
 html{scroll-behavior:smooth}
 body{ background:var(--ta-black); color:var(--ta-text); direction:rtl; text-align:right;
