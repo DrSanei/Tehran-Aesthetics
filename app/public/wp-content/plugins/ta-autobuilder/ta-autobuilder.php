@@ -70,15 +70,16 @@ class TA_AutoBuilder {
         </a>
       </section>
 
-      <section class="offers">
-  <div class="banner">
-    <img
+   <section class="offers">
+  <div class="banner" style="width:100%; max-width:1200px; margin:0 auto;">
+    <img 
       src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/Off-Banner.png"
       alt="بنر پیشنهادها"
-      style="width:100%;height:auto;border-radius:16px;display:block;"
+      style="width:100%; height:280px; border-radius:16px; object-fit:cover; display:block;" 
     />
   </div>
 </section>
+
 
       <section class="services">
         <h3>خدمات</h3>
