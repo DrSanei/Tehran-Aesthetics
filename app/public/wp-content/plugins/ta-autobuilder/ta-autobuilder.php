@@ -75,7 +75,7 @@ class TA_AutoBuilder {
     <img 
       src="https://tehran-aesthetics.ir/wp-content/uploads/2025/08/Off-Banner.png"
       alt="بنر پیشنهادها"
-      style="max-width:100%; height:120px; border-radius:16px; object-fit:cover; display:block;" 
+      style="width:90%; height:120px; border-radius:16px; object-fit:cover; display:block;" 
     />
   </div>
 </section>
