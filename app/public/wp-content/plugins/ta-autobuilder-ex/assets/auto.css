@@ -3,7 +3,7 @@
 .hero .hero-text h1{ color:#C8A94B; margin:0 }
 .hero .hero-text p{ color:#cfcfd2; margin:4px 0 0 0 }
 .finder form{ display:grid; grid-template-columns:1fr 1fr; gap:8px; background:#141416; padding:10px; border-radius:12px; border:1px solid #242428 }
-.finder select{ background:#0f1013; color:#E8E8EA; border:1px solid #2c2d33; padding:8px; border-radius:10px }
+.finder select{ background:#0f1013; color:#2222b1; border:1px solid #2c2d33; padding:8px; border-radius:10px }
 .finder button{ grid-column:1/-1; background:#C8A94B; color:#0B0B0C; border:none; padding:10px; border-radius:10px; font-weight:700 }
 
 .services h2, .offers h2, .branches h2{ color:#C8A94B; margin:0 0 8px 0 }
