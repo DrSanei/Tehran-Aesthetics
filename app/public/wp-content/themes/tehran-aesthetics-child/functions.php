@@ -29,7 +29,7 @@ add_action('wp_body_open', function(){
   echo '<div class="ta-header">';
   // Menu button (icon + label)
 echo '<button class="menu-btn" type="button" aria-label="منو" data-ta-menu-open>';
-echo   '<span class="material-icons">menu</span>';
+echo   '<span>منو</span>';
 echo '</button>';
 
 

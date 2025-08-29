@@ -35,7 +35,7 @@ body{ background:var(--ta-black); color:var(--ta-text); direction:rtl; text-alig
 .ta-header .menu-btn .bar{ width:20px; height:2px; background:var(--ta-text); display:block; margin:3px 0; border-radius:2px }
 /* Bigger logo */
 .ta-header .logo img{
-  height: 56px !important;              /* force normal size */
+  height: 80px !important;              /* force normal size */
   width: auto !important;
 }
 .ta-header .text-logo{
